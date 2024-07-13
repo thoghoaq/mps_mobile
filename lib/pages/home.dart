@@ -13,12 +13,14 @@ class _HomeState extends State<Home> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        body: InAppWebView(
-      initialUrlRequest:
-          URLRequest(url: WebUri("https://mps-client-ashen.vercel.app/")),
-      onWebViewCreated: (controller) {
-        inAppWebViewController = controller;
-      },
+        body: SafeArea(
+      child: InAppWebView(
+        initialUrlRequest:
+            URLRequest(url: WebUri("https://mps-client-ashen.vercel.app/")),
+        onWebViewCreated: (controller) {
+          inAppWebViewController = controller;
+        },
+      ),
     ));
   }
 }
